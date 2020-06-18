@@ -1,0 +1,181 @@
+{
+	"title" : "My form",
+	"description" : "Please fill out this survey.",
+	"id" : "12345",
+	"submit" : "example.com/endpoint",
+	"submitButton" : "Complete Survey",
+	"pages" : [
+		{
+			"title" : "Part 1",
+			"description" : "Personal Info",
+			"fields" : [
+				{
+					"type" : "text",
+					"model" : "first_name",
+					"label" : "First Name",
+					"placeholder" : "First Name",
+					"tooltip" : "",
+					"required" : true,
+					"validation" : "notEmpty"
+				},
+				{
+					"type" : "number",
+					"model" : "age",
+					"label" : "Age",
+					"placeholder" : "",
+					"tooltip" : "",
+					"required" : true,
+					"validation" : "",
+					"min" : 1,
+					"max" : 99
+				},
+				{
+					"type" : "select",
+					"model" : "marital_status",
+					"label" : "Marital Status",
+					"placeholder" : "Select One",
+					"tooltip" : "",
+					"required" : true,
+					"options" : [
+						{
+							"value" : "Single",
+							"label" : "Single",
+							"default": true
+						},
+						{
+							"value" : "Married",
+							"label" : "Married",
+							"default": false
+						}
+					]
+				},
+				{
+					"type" : "checkbox",
+					"model" : "veteran",
+					"value" : "veteran",
+					"label" : "Military Veteran",
+					"tooltip" : "",
+					"required" : false
+				}
+			]
+		},
+		{
+			"title" : "Part 2",
+			"description" : "More Info",
+			"fields" : [
+				{
+					"type" : "checkboxgroup",
+					"model" : "hobbies",
+					"label" : "Hobbies",
+					"tooltip" : "",
+					"required" : false,
+					"options": [
+						{
+							"value" : "camping",
+							"label" : "Camping",
+							"checked": false
+						},
+						{
+							"value" : "Horseback Riding",
+							"label" : "Horseback Riding",
+							"checked": false
+						},
+						{
+							"value" : "Fishing",
+							"label" : "Fishing",
+							"checked": false
+						}
+
+
+					]
+				},	
+				{
+					"type" : "radio",
+					"model" : "gender",
+					"label" : "Gender",
+					"tooltip" : "",
+					"required" : true,
+					"options" : [
+						{
+							"value" : "male",
+							"label" : "Male",
+							"default": false
+						},
+						{
+							"value" : "female",
+							"label" : "Female",
+							"default": false
+						}
+					]
+				},
+				{
+					"type" : "text",
+					"model" : "disableExample",
+					"label" : "Disabled Field",
+					"disabled" : true,
+					"required" : false
+				},
+				{
+					"type" : "textarea",
+					"model" : "profile",
+					"label" : "Profile",
+					"placeholder" : "Tell us about yourself.",
+					"tooltip" : "",
+					"required" : true,
+					"validation" : "",
+					"minLength" : 20,
+					"maxLength" : 200
+
+				},
+				{
+					"type" : "paragraph",
+					"value" : "If you answered the previous question, answer the next also",
+					"conditional" : "profile != ''" 
+				},
+				{
+					"type" : "text",
+					"model" : "reason",
+					"conditional" : "profile = 'A'",
+					"label" : "Conditional",
+					"placeholder" : "",
+					"tooltip" : "",
+					"required" : false,
+					"validation" : "notEmpty"
+				},
+				{
+					"type" : "subheading",
+					"value" : "This is a subheading"
+				},
+				{
+					"type" : "divider"
+				}
+			]
+		},
+		{
+			"title" : "Part 3 - Looped",
+			"description" : "This section can loop",
+			"loop" : "loop1",
+			"fields" : [
+				{
+					"type" : "text",
+					"model" : "field1",
+					"label" : "Field 1",
+					"placeholder" : "",
+					"tooltip" : "",
+					"required" : false,
+					"validation" : ""
+				},
+				{
+					"type" : "text",
+					"model" : "field2",
+					"label" : "Field 2",
+					"placeholder" : "",
+					"tooltip" : "",
+					"required" : false,
+					"validation" : ""
+				}
+			]
+		}
+	]
+}
+	
